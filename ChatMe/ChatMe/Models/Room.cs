@@ -13,11 +13,4 @@ namespace ChatMe.Models
         public List<Participant> Participants { get; set; }
         public List<ChatMessage> ChatMessages { get; set; }
     }
-
-    public class User
-    {
-        public string Name { get; set; }
-        public string ID { get; set; }
-        public byte[] Photo { get; set; }
-    }
 }
