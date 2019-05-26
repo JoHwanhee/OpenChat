@@ -96,11 +96,11 @@ namespace ChatMe.Data
                 IsOriginNative = true
             });
 
-            Participants.Add(new Participant { Name = "Superman", Chatter = someChatter, IsTyping = true, IsLoggedIn = true });
-            Participants.Add(new Participant { Name = "Wonder Woman", Chatter = someChatter, IsLoggedIn = false });
-            Participants.Add(new Participant { Name = "Aquaman", Chatter = someChatter, HasSentNewMessage = true });
-            Participants.Add(new Participant { Name = "Captain Canada", Chatter = someChatter, HasSentNewMessage = true });
-            Participants.Add(new Participant { Name = "Iron Man", Chatter = someChatter, IsTyping = true });
+            //Participants.Add(new Participant { Name = "Superman", Chatter = someChatter, IsTyping = true, IsLoggedIn = true });
+            //Participants.Add(new Participant { Name = "Wonder Woman", Chatter = someChatter, IsLoggedIn = false });
+            //Participants.Add(new Participant { Name = "Aquaman", Chatter = someChatter, HasSentNewMessage = true });
+            //Participants.Add(new Participant { Name = "Captain Canada", Chatter = someChatter, HasSentNewMessage = true });
+            //Participants.Add(new Participant { Name = "Iron Man", Chatter = someChatter, IsTyping = true });
 
             SelectedParticipant = Participants.First();
         }
