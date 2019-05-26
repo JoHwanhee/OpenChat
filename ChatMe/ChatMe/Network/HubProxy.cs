@@ -12,11 +12,12 @@ namespace ChatMe.Network
 {
     public class HubProxy
     {
-        private ClientWebSocket socket = new ClientWebSocket();
+        private ClientWebSocket socket;
         private CancellationTokenSource cancellationToken;
-        private string url = "";
         private Dictionary<string, Action<object>> actions = new Dictionary<string, Action<object>>();
-        public bool IsConnected = false;
+        public bool IsConnected { get; private set; }= false;
+
+        private string url;
 
         public HubProxy(string url)
         {
