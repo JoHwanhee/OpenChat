@@ -54,7 +54,7 @@ ipch/
 *.psess
 *.vsp
 *.vspx
-.vs
+.vs/
 
 # Guidance Automation Toolkit
 *.gpState
@@ -131,3 +131,6 @@ $RECYCLE.BIN/
 .DS_Store
 
 _NCrunch*
+
+# python
+venv/

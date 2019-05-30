@@ -6,22 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using ChatMe.Models;
 using ChatMe.ViewModels;
+using SuperSocket.SocketBase.Command;
 
 namespace ChatMe.Data
 {
     public class SampleMainWindowViewModel : ViewModelBase
     {
-        private string _userName;
-        public string UserName
-        {
-            get { return _userName; }
-            set
-            {
-                _userName = value;
-                OnPropertyChanged();
-            }
-        }
-
+        private Room _currentRoom;
+        
         private ObservableCollection<Participant> _participants = new ObservableCollection<Participant>();
         public ObservableCollection<Participant> Participants
         {
@@ -33,17 +25,13 @@ namespace ChatMe.Data
             }
         }
 
-        private Participant _selectedParticipant;
-        public Participant SelectedParticipant
+        public ObservableCollection<ChatMessage> ChatMessages { get; }
+
+        public ICommand OpenImageCommand
         {
-            get { return _selectedParticipant; }
-            set
-            {
-                _selectedParticipant = value;
-                if (SelectedParticipant.HasSentNewMessage) SelectedParticipant.HasSentNewMessage = false;
-                OnPropertyChanged();
-            }
+            get { throw new NotImplementedException(); }
         }
+
 
         public SampleMainWindowViewModel()
         {
@@ -95,14 +83,13 @@ namespace ChatMe.Data
                 Time = DateTime.Now,
                 IsOriginNative = true
             });
-
+            ChatMessages = someChatter;
             //Participants.Add(new Participant { Name = "Superman", Chatter = someChatter, IsTyping = true, IsLoggedIn = true });
             //Participants.Add(new Participant { Name = "Wonder Woman", Chatter = someChatter, IsLoggedIn = false });
             //Participants.Add(new Participant { Name = "Aquaman", Chatter = someChatter, HasSentNewMessage = true });
             //Participants.Add(new Participant { Name = "Captain Canada", Chatter = someChatter, HasSentNewMessage = true });
             //Participants.Add(new Participant { Name = "Iron Man", Chatter = someChatter, IsTyping = true });
 
-            SelectedParticipant = Participants.First();
         }
     }
 }
